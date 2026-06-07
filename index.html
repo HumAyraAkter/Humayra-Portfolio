@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humayra Portfolio</title>
+
+    <!-- গুগল ফন্ট (Inter) -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- এক্সটার্নাল সিএসএস ফাইল -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Three.js এবং GSAP লাইব্রেরি সিডিএন -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <!-- Typed.js লাইব্রেরি লিঙ্ক -->
+    <!-- Typed.js লাইব্রেরি লিঙ্ক -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css">
+    <!-- এক্সটার্নাল জাভাস্ক্রিপ্ট ফাইল -->
+
+
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ব্যাকগ্রাউন্ড ইফেক্টস -->
+    <div class="grid-bg"></div>
+    <div class="glow-effect"></div>
+
+    <!-- 3D জেলীফিশ ক্যানভাস -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- নেভিগেশন বার -->
+<nav>
+
+  <button class="menu-toggle" id="menuOpen">
+    ☰
+  </button>
+
+  <div class="nav-links" id="navLinks">
+
+    <button class="menu-close" id="menuClose">
+      ✕
+    </button>
+
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+
+  </div>
+
+</nav>
+
+
+
+    <!-- মেইন কন্টেন্ট লেয়ার -->
+    <main class="container">
+        <div class="hero-text">
+            <div class="sub-title">CLEAN CODE & BEAUTIFUL USER INTERFACES</div>
+            <!-- Word Animation এর সুবিধার্থে আইডি যোগ করা হয়েছে এবং ছবির মতো নির্দিষ্ট টেক্সটের কালার আলাদা করা হয়েছে -->
+            <h1 id="animated-heading">
+                Transforming Concepts into Seamless <span class="highlight-text">User Experiences</span>
+            </h1>
+            <p>Hi! I'm <span class="highlight-tex"> <strong>HUMAYRA </strong></span>, a Passionate Frontend Developer.
+            </p>
+            
+        </div>
+    </main>
+
+
+
+
+    <!-- Bento Grid Section -->
+    <section id="about" class="bento-container">
+
+        <!-- কার্ড ১: ল্যাপটপ থ্রিডি মকআপ (বড় কার্ড) -->
+        <div class="bento-card card-big">
+            <div class="card-content">
+                <h2>I prioritize client collaboration, fostering open communication</h2>
+            </div>
+            <!-- এখানে আপনার ল্যাপটপের ইমেজ বা থ্রিডি ক্যানভাস বসবে -->
+            <div class="mockup-placeholder"></div>
+        </div>
+
+        <!-- কার্ড ২: টাইম জোন (ছোট কার্ড) -->
+        <div class="bento-card card-sm-top">
+            <div class="card-content">
+                <h3>Available for global remote work & flexible time zones</h3>
+                <!-- গ্লোব ইমেজের কন্টেইনার -->
+                <div class="globe-container">
+                    <img src="h.png" alt="Rotating Globe" class="rotating-globe">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- কার্ড ৩: টেক স্ট্যাক (ছোট কার্ড) -->
+        <div class="bento-card card-sm-bottom">
+            <div class="card-content">
+                <span class="sub">I constantly try to improve</span>
+                <h2>My tech stack</h2>
+            </div>
+            <!-- টেক স্ট্যাকের ব্যাজ সমূহ -->
+            <div class="tech-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Javascript</span>
+                <span>Next.js</span>
+                <span>Three.js</span>
+                <span>React.js</span>
+                <span>PHP</span>
+                <span>Photoshop</span>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+    <section id="about-next" class="bento-container-next">
+
+        <!-- কার্ড ৪: টেক এনথুসিয়াস্ট (উপরের বামে) -->
+        <div class="bento-card card-tech-enthusiast">
+            <div class="card-content">
+                <h2>Tech enthusiast with a passion for development.</h2>
+            </div>
+            <div class="mini-mockup-placeholder"></div>
+        </div>
+
+        <!-- CARD ৫: স্টার্ট এ প্রজেক্ট / ইমেইল কপি (নিচের বামে) -->
+        <!-- কার্ড ৫: স্টার্ট এ প্রজেক্ট / ইমেইল কপি -->
+        <div class="bento-card card-cta-email">
+            <!-- ব্যাকগ্রাউন্ডের কনফেটি ইফেক্ট দেখানোর জন্য খালি কন্টেইনার -->
+            <div id="confetti-wrapper"></div>
+
+            <div class="card-content">
+                <h2>Do you want to start a project together?</h2>
+                <!-- এখানে data-email="humu19123@gmail.com" যোগ করা হয়েছে -->
+                <button class="copy-email-btn" onclick="copyEmail(this)" data-email="humu19123@gmail.com">
+                    <!-- কপি আইকন -->
+                    <svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span class="btn-text">Copy my email address</span>
+                </button>
+            </div>
+        </div>
+
+
+
+        <!-- কার্ড ৬: দ্য ইনসাইড স্কুপ / জেএস অ্যানিমেশন লাইব্রেরি (ডানের বড় কার্ড) -->
+        <div class="bento-card card-inside-scoop">
+            <div class="card-content">
+                <span class="sub">My Approach</span>
+                <h2>Turning complex problems into simple, clean, and pixel-perfect web designs.</h2>
+            </div>
+
+            <!-- কার্ডের নিচে ইমেজ বসানোর কন্টেইনার -->
+            <div class="card-bottom-image">
+                <!-- এখানে আপনার আসল ইমেজের লিংক বা পাথ (Path) বসাবেন -->
+                <img src="jj.png" alt="Approach Visual" class="bottom-pic">
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <section id="projects" class="projects-section">
+        <!-- সেকশন মেইন হেডিং -->
+        <h1 class="section-title">A small selection of <span class="purple-text">recent projects</span></h1>
+
+        <!-- সোয়াইপার মেইন কন্টেইনার -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+
+                <!-- প্রজেক্ট ১ -->
+                <div class="swiper-slide project-card" data-tilt data-tilt-max="10" data-tilt-speed="400"
+                    data-tilt-perspective="1000">
+                    <div class="project-img-wrapper">
+                        <img style="background-repeat: no-repeat; background-size: cover;" src="video1img1.jpg"
+                            alt="3D Solar System" class="project-img">
+                        <!-- ভিডিও যোগ করা হয়েছে (আপনার ফাইলের নাম দিয়ে পরিবর্তন করুন) -->
+                        <video src="video1.mp4" class="project-video" muted loop playsinline></video>
+                    </div>
+                    <div class="project-info">
+                        <h3> Interactive Personal Portfolio Website</h3>
+                        <p>A modern, responsive showcase of my skills and dynamic web projects built using the latest
+                            front-end technologies for a smooth user experience.</p>
+                        <div class="project-footer">
+                            <div class="tech-icons">
+                                <span class="icon-badge">HTML</span>
+                                <span class="icon-badge">CSS</span>
+                                <span class="icon-badge">JS</span>
+                            </div>
+                            <a href="https://humayraakter.github.io/Tohura-Portfolio-/" target="_blank"
+                                rel="noopener noreferrer" class="live-site-btn">
+                                Check Live Site
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- প্রজেক্ট 11 -->
+                <div class="swiper-slide project-card" data-tilt data-tilt-max="10" data-tilt-speed="400"
+                    data-tilt-perspective="1000">
+                    <div class="project-img-wrapper">
+                        <img src="video11img11.jpg" alt="Project 4" class="project-img">
+                        <!-- ভিডিও যোগ করা হয়েছে -->
+                        <video src="video11.mp4" class="project-video" muted loop playsinline></video>
+                    </div>
+                    <div class="project-info">
+                        <h3> Elite Visual Showcase Portfolio</h3>
+                        <p> A visually stunning, highly interactive personal portfolio designed with fluid motion
+                            effects, premium typography, and an immersive layout to spotlight high-end creative work.
+                        </p>
+                        <div class="project-footer">
+                            <div class="tech-icons">
+                                <span class="icon-badge">HTML</span>
+                                <span class="icon-badge">CSS</span>
+                                <span class="icon-badge">JS</span>
+                            </div>
+                            <a href="https://humayraakter.github.io/Simple-Portfolio02/" target="_blank"
+                                class="live-site-btn">Check Live Site <svg width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+                <!--4-->
+                <div class="swiper-slide project-card" data-tilt data-tilt-max="10" data-tilt-speed="400"
+                    data-tilt-perspective="1000">
+                    <div class="project-img-wrapper">
+                        <img src="video8img8.png" alt="Project 4" class="project-img">
+                        <!-- ভিডিও যোগ করা হয়েছে -->
+                        <video src="video8.mp4" class="project-video" muted loop playsinline></video>
+                    </div>
+                    <div class="project-info">
+                        <h3>Seamless Digital Shopping Platform</h3>
+                        <p> A fully functional e-commerce storefront equipped with dynamic product grids, an interactive
+                            shopping cart system, optimized performance, and clean, user-friendly layouts.</p>
+                        <div class="project-footer">
+                            <div class="tech-icons">
+                                <span class="icon-badge">HTML</span>
+                                <span class="icon-badge">CSS</span>
+                                <span class="icon-badge">JS</span>
+                            </div>
+                            <a href="#" target="_blank" class="live-site-btn">Check Live Site <svg width="14"
+                                    height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- প্রজেক্ট 5 -->
+                <div class="swiper-slide project-card" data-tilt data-tilt-max="10" data-tilt-speed="400"
+                    data-tilt-perspective="1000">
+                    <div class="project-img-wrapper">
+                        <img src="video4img4.jpg" alt="Project 4" class="project-img">
+                        <!-- ভিডিও যোগ করা হয়েছে -->
+                        <video src="video4.mp4" class="project-video" muted loop playsinline></video>
+                    </div>
+                    <div class="project-info">
+                        <h3>Corporate Business Showcase Platform</h3>
+                        <p>A professional, high-converting website built to highlight corporate services, client
+                            testimonials, and business growth metrics with a seamless user interface.</p>
+                        <div class="project-footer">
+                            <div class="tech-icons">
+                                <span class="icon-badge">HTML</span>
+                                <span class="icon-badge">CSS</span>
+                                <span class="icon-badge">JS</span>
+                            </div>
+                            <a href="https://humayraakter.github.io/Dream-Website/" target="_blank"
+                                class="live-site-btn">Check Live Site <svg width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- প্রজেক্ট ২ -->
+                <div class="swiper-slide project-card" data-tilt data-tilt-max="10" data-tilt-speed="400"
+                    data-tilt-perspective="1000">
+                    <div class="project-img-wrapper">
+                        <img src="video2img2.jpg" alt="Yoom Video App" class="project-img">
+                        <!-- ভিডিও যোগ করা হয়েছে -->
+                        <video src="video2.mp4" class="project-video" muted loop playsinline></video>
+                    </div>
+                    <div class="project-info">
+                        <h3>Sleek Creative Agency Portfolio</h3>
+                        <p> A high-performance website featuring clean layouts and interactive animations designed to
+                            highlight creative design work and professional business services effectively.</p>
+                        <div class="project-footer">
+                            <div class="tech-icons">
+                                <span class="icon-badge">HTML</span>
+                                <span class="icon-badge">CSS</span>
+                                <span class="icon-badge">JS</span>
+                            </div>
+                            <a href="https://humayraakter.github.io/Business-Website/" target="_blank"
+                                class="live-site-btn">Check Live Site <svg width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+                <!--3-->
+
+
+                <!-- প্রজেক্ট 6 -->
+                <div class="swiper-slide project-card" data-tilt data-tilt-max="10" data-tilt-speed="400"
+                    data-tilt-perspective="1000">
+                    <div class="project-img-wrapper">
+                        <img src="video3img3.jpg" alt="Project 3" class="project-img">
+                        <!-- ভিডিও যোগ করা হয়েছে -->
+                        <video src="video3.mp4" class="project-video" muted loop playsinline></video>
+                    </div>
+                    <div class="project-info">
+                        <h3>Minimalist Developer Project Hub</h3>
+                        <p>A fast, optimized space focusing on clean typography and structured data to display technical
+                            coding projects, live links, and GitHub repositories.
+                        </p>
+                        <div class="project-footer">
+                            <div class="tech-icons">
+                                <span class="icon-badge">HTML</span>
+                                <span class="icon-badge">CSS</span>
+                                <span class="icon-badge">JS</span>
+                            </div>
+                            <a href="https://humayraakter.github.io/Landing-Page/" target="_blank"
+                                class="live-site-btn">Check Live Site <svg width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- প্রজেক্ট 9 -->
+                <div class="swiper-slide project-card" data-tilt data-tilt-max="10" data-tilt-speed="400"
+                    data-tilt-perspective="1000">
+                    <div class="project-img-wrapper">
+                        <img src="video9img9.jpg" alt="Project 4" class="project-img">
+                        <!-- ভিডিও যোগ করা হয়েছে -->
+                        <video src="video9.mp4" class="project-video" muted loop playsinline></video>
+                    </div>
+                    <div class="project-info">
+                        <h3>Sleek Digital Calculation Tool</h3>
+                        <p> A fully responsive web calculator supporting basic arithmetic operations, dynamic display
+                            updates, error handling, and clean, tactile button layouts for everyday math.</p>
+                        <div class="project-footer">
+                            <div class="tech-icons">
+                                <span class="icon-badge">HTML</span>
+                                <span class="icon-badge">CSS</span>
+                                <span class="icon-badge">JS</span>
+                            </div>
+                            <a href="https://humayraakter.github.io/Calculator/" target="_blank"
+                                class="live-site-btn">Check Live Site <svg width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- প্রজেক্ট 7 -->
+                <div class="swiper-slide project-card" data-tilt data-tilt-max="10" data-tilt-speed="400"
+                    data-tilt-perspective="1000">
+                    <div class="project-img-wrapper">
+                        <img src="video5img5.jpg" alt="Project 4" class="project-img">
+                        <!-- ভিডিও যোগ করা হয়েছে -->
+                        <video src="video5.mp4" class="project-video" muted loop playsinline></video>
+                    </div>
+                    <div class="project-info">
+                        <h3>Interactive Brain Training Game</h3>
+                        <p> A fun memory-matching card game designed with smooth card-flip animations, score tracking,
+                            and engaging logic to test and improve visual memory.</p>
+                        <div class="project-footer">
+                            <div class="tech-icons">
+                                <span class="icon-badge">HTML</span>
+                                <span class="icon-badge">CSS</span>
+                                <span class="icon-badge">JS</span>
+                            </div>
+                            <a href="https://humayraakter.github.io/Memory-card-game/" target="_blank"
+                                class="live-site-btn">Check Live Site <svg width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- প্রজেক্ট 8 -->
+                <div class="swiper-slide project-card" data-tilt data-tilt-max="10" data-tilt-speed="400"
+                    data-tilt-perspective="1000">
+                    <div class="project-img-wrapper">
+                        <img src="video6img6.JPG" alt="Project 4" class="project-img">
+                        <!-- ভিডিও যোগ করা হয়েছে -->
+                        <video src="video6.mp4" class="project-video" muted loop playsinline></video>
+                    </div>
+                    <div class="project-info">
+                        <h3>Classic Retro Arcade Game</h3>
+                        <p>A modern recreation of the nostalgic snake game featuring responsive keyboard controls,
+                            real-time score keeping, dynamic speed scaling, and sleek arcade visuals.</p>
+                        <div class="project-footer">
+                            <div class="tech-icons">
+                                <span class="icon-badge">HTML</span>
+                                <span class="icon-badge">CSS</span>
+                                <span class="icon-badge">JS</span>
+                            </div>
+                            <a href="https://humayraakter.github.io/Snake-Game/" target="_blank" class="live-site-btn">Check Live Site <svg width="14"
+                                    height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- প্রজেক্ট 9 -->
+                <div class="swiper-slide project-card" data-tilt data-tilt-max="10" data-tilt-speed="400"
+                    data-tilt-perspective="1000">
+                    <div class="project-img-wrapper">
+                        <img src="video7img7.JPG" alt="Project 4" class="project-img">
+                        <!-- ভিডিও যোগ করা হয়েছে -->
+                        <video src="video7.mp4" class="project-video" muted loop playsinline></video>
+                    </div>
+                    <div class="project-info">
+                        <h3>Engaging Web Browser Game</h3>
+                        <p> A lighthearted, highly addictive browser game focused on simple mechanics, satisfying user
+                            interactions, vibrant visual feedback, and a seamless entertainment experience.</p>
+                        <div class="project-footer">
+                            <div class="tech-icons">
+                                <span class="icon-badge">HTML</span>
+                                <span class="icon-badge">CSS</span>
+                                <span class="icon-badge">JS</span>
+                            </div>
+                            <a href="https://humayraakter.github.io/Love-Game/" target="_blank" class="live-site-btn">Check Live Site <svg width="14"
+                                    height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- প্রজেক্ট 8 -->
+
+
+
+
+
+
+                <!-- প্রজেক্ট 10 -->
+                <div class="swiper-slide project-card" data-tilt data-tilt-max="10" data-tilt-speed="400"
+                    data-tilt-perspective="1000">
+                    <div class="project-img-wrapper">
+                        <img src="video10img10.JPG" alt="Project 4" class="project-img">
+                        <!-- ভিডিও যোগ করা হয়েছে -->
+                        <video src="video10.mp4" class="project-video" muted loop playsinline></video>
+                    </div>
+                    <div class="project-info">
+                        <h3> Secure User Authentication Interface</h3>
+                        <p>A sleek, fully responsive login form built with strict input validation, modern UI/UX
+                            principles, error handling, and animated transitions for secure entry.</p>
+                        <div class="project-footer">
+                            <div class="tech-icons">
+                                <span class="icon-badge">HTML</span>
+                                <span class="icon-badge">CSS</span>
+                                <span class="icon-badge">JS</span>
+                            </div>
+                            <a href="https://humayraakter.github.io/Login-Page01/" target="_blank"
+                                class="live-site-btn">Check Live Site <svg width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+            <!-- সোয়াইপার ডটস -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <section id="testimonials" class="testimonials-section">
+        <!-- সেকশন মেইন হেডিং -->
+        <h1 class="testimonials-title">Kind words from <span class="purple-text">satisfied clients</span></h1>
+
+        <!-- টেস্টমোনিয়াল স্লাইডার কন্টেইনার -->
+        <div class="swiper testimonialSwiper">
+            <div class="swiper-wrapper">
+
+                <!-- ক্লায়েন্ট ১ -->
+                <div class="swiper-slide testimonial-card">
+                    <p class="client-quote">
+                        "হুমায়রার সাথে কাজ করার অভিজ্ঞতা দারুণ ছিল। সে আমাদের জটিল ফিগমা ডিজাইনকে একটি অপ্টিমাইজড
+                        নেক্সট ডট জেএস অ্যাপ্লিকেশনে রূপান্তর করেছে। তার পরিষ্কার কোডিং এবং সমস্যা সমাধানের দক্ষতা
+                        সত্যিই প্রশংসনীয়।"
+                    </p>
+                    <div class="client-profile">
+                        <img src="kn.jpg" alt="Michael Johnson" class="client-avatar">
+                        <div class="client-details">
+                            <h4>Tanvir Ahmed</h4>
+                            <span>CTO, TechHive Bangladesh</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ক্লায়েন্ট ২ -->
+                <div class="swiper-slide testimonial-card">
+                    <p class="client-quote">
+                        "হুমায়রা অত্যন্ত প্রফেশনাল এবং কাজের প্রতি মনোযোগী। খুব কম সময় থাকা সত্ত্বেও সে আমাদের
+                        ফ্রন্টএন্ড প্রজেক্টটি গুণগত মান বজায় রেখে নির্দিষ্ট সময়ে জমা দিয়েছে।"
+                    </p>
+                    <div class="client-profile">
+                        <img src="kn.jpg" alt="Sarah Thompson" class="client-avatar">
+                        <div class="client-details">
+                            <h4>Sarah Jahan</h4>
+                            <span> Founder, BMN E-commerce</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ক্লায়েন্ট ৩ (লুপ সচল রাখার জন্য অতিরিক্ত কার্ড) -->
+                <div class="swiper-slide testimonial-card">
+                    <p class="client-quote">
+                        "হুমায়রার কাজের নিখুঁততা আমাকে সবচেয়ে বেশি মুগ্ধ করেছে। সে ডিজাইন এবং ক্লিন কোডের মধ্যে খুব
+                        সুন্দর সমন্বয় তৈরি করতে পারে। আমাদের সাইটের অ্যানিমেশন এবং রেসপন্সিভনেস দারুণ ছিল।"
+                    </p>
+                    <div class="client-profile">
+                        <img src="kn.jpg" alt="David Miller" class="client-avatar">
+                        <div class="client-details">
+                            <h4>Rafsan Chowdhury</h4>
+                            <span>Lead Designer, Studio Pixel Kolony</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- নতুন যুক্ত করা রিভিউ বাটন সেকশন -->
+        <div class="leave-review-container">
+            <p>Worked with me before? Share your experience!</p>
+            <!-- এখানে '#' এর জায়গায় আপনার লিঙ্কডইন প্রোফাইল বা গুগল ফর্মের লিংক বসিয়ে দেবেন -->
+            <a href="mailto:humu19123@://gmail.com" target="_blank" class="review-btn">
+                <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                    <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4z"></path>
+                </svg>
+                Leave a Review
+            </a>
+        </div>
+        <!-- 🌟 নিচের ব্র্যান্ড লোগোসমূহ (স্থির লেআউট) 
+        <div class="companies-row">
+            <div class="logo-item">
+                <img src="https://wikimedia.org" alt="Cloudinary">
+                <span>Cloudinary</span>
+            </div>
+
+            <div class="logo-item">
+                <img src="https://wikimedia.org" alt="appwrite">
+                <span>appwrite</span>
+            </div>
+
+            <div class="logo-item font-hostinger">
+                <img src="https://wikimedia.org" alt="HOSTINGER">
+            </div>
+
+            <div class="logo-item">
+                <img src="https://wikimedia.org" alt="docker">
+                <span>docker.</span>
+            </div>
+
+            <div class="logo-item">
+                <span class="js-mastery-logo">{JS} <small>MASTERY</small></span>
+            </div>
+        </div>-->
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="experience" class="experience-section">
+        <!-- সেকশন মেইন হেডিং -->
+        <h1 class="experience-title">My <span class="purple-text">work experience</span></h1>
+
+        <!-- অভিজ্ঞতা গ্রিড কন্টেইনার -->
+        <div class="experience-grid">
+
+            <!-- কার্ড ১: ফ্রন্টএন্ড ইন্টার্ন -->
+            <div class="exp-card">
+                <!-- ক্রমাগত মুভ করতে থাকা হোয়াইট/পার্পল শ্যাডো সার্কেল -->
+                <div class="moving-glow"></div>
+
+                <div class="exp-content">
+                    <div class="exp-icon">💻</div> <!-- এখানে আপনার আসল ইমেজ বা আইকন বসাতে পারেন -->
+                    <div class="exp-text">
+                        <h3>Independent Frontend Developer</h3>
+                        <p>"Built and deployed responsive web apps using React.js, Next.js, and Tailwind CSS."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- কার্ড ২: মোবাইল অ্যাপ ডেভ -->
+            <div class="exp-card">
+                <div class="moving-glow"></div>
+                <div class="exp-content">
+                    <div class="exp-icon">📱</div>
+                    <div class="exp-text">
+                        <h3>Remote</h3>
+                        <p>"Converted UI/UX designs into pixel-perfect, interactive, and modern web interfaces."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- কার্ড ৩: ফ্রিল্যান্স অ্যাপ প্রজেক্ট -->
+            <div class="exp-card">
+                <div class="moving-glow"></div>
+                <div class="exp-content">
+                    <div class="exp-icon">💡</div>
+                    <div class="exp-text">
+                        <h3>Web Development Bootcamps</h3>
+                        <p>"Mastered modern JavaScript, React components, state management, and web styling."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- কার্ড ৪: লিড ফ্রন্টএন্ড ডেভেলপার -->
+            <div class="exp-card">
+                <div class="moving-glow"></div>
+                <div class="exp-content">
+                    <div class="exp-icon">🚀</div>
+                    <div class="exp-text">
+                        <h3>GitHub Community</h3>
+                        <p> "Fixed front-end UI bugs and improved project structures using Git and GitHub workflows.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer id="contact" class="footer-section">
+        <!-- উপরের মেইন কন্টেন্ট অংশ (CTA) -->
+        <div class="footer-cta">
+            <h1 class="cta-title">
+                Ready to take
+                <span class="words-wrapper purple-text">
+                    <span>your digital presence</span>
+                    <span>your web application</span>
+                    <span>your business brand</span>
+                    <span>your dream project</span>
+                </span> <br>
+                to the next level?
+            </h1>
+
+
+            <p class="cta-subtitle">Reach out to me today and let's discuss how I can help you achieve your goals.</p>
+
+            <!-- Let's get in touch বাটন -->
+            <button class="touch-btn" onclick="openContactForm()">
+                Let's get in touch
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- একদম নিচের কপিরাইট এবং সোশ্যাল মিডিয়া অংশ -->
+        <div class="footer-bottom">
+            <p class="copyright-text">"Humayra // Portfolio 2026"</p>
+
+            <!-- সোশ্যাল আইকনসমূহ (ডার্ক গ্লাস লুক) -->
+            <div class="social-icons">
+                <a href="https://github.com/HumAyraAkter" class="icon-link" aria-label="GitHub">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/someoneswifeee" class="icon-link" aria-label="Facebook">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M13 9H17.5L17 11H13V20H11V11H7V9H11V7.12777C11 5.34473 11.1857 4.69816 11.5343 4.04631C11.8829 3.39446 12.3945 2.88288 13.0463 2.53427C13.6982 2.18565 14.3447 2 16.1278 2C16.6498 2 17.1072 2.05 17.5 2.15V4H16.1278C14.8041 4 14.401 4.07784 13.9895 4.29789C13.6862 4.46011 13.4601 4.68619 13.2979 4.98951C13.0778 5.40096 13 5.80407 13 7.12777V9Z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/humu_is_dead_/" class="icon-link" aria-label="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M12.001 9C10.3436 9 9.00098 10.3431 9.00098 12C9.00098 13.6573 10.3441 15 12.001 15C13.6583 15 15.001 13.6569 15.001 12C15.001 10.3427 13.6579 9 12.001 9ZM12.001 7C14.7614 7 17.001 9.2371 17.001 12C17.001 14.7605 14.7639 17 12.001 17C9.24051 17 7.00098 14.7629 7.00098 12C7.00098 9.23953 9.23808 7 12.001 7ZM18.501 6.74915C18.501 7.43926 17.9402 7.99917 17.251 7.99917C16.5609 7.99917 16.001 7.4384 16.001 6.74915C16.001 6.0599 16.5617 5.5 17.251 5.5C17.9393 5.49913 18.501 6.0599 18.501 6.74915ZM12.001 4C9.5265 4 9.12318 4.00655 7.97227 4.0578C7.18815 4.09461 6.66253 4.20007 6.17416 4.38967C5.74016 4.55799 5.42709 4.75898 5.09352 5.09255C4.75867 5.4274 4.55804 5.73963 4.3904 6.17383C4.20036 6.66332 4.09493 7.18811 4.05878 7.97115C4.00703 9.0752 4.00098 9.46105 4.00098 12C4.00098 14.4745 4.00753 14.8778 4.05877 16.0286C4.0956 16.8124 4.2012 17.3388 4.39034 17.826C4.5591 18.2606 4.7605 18.5744 5.09246 18.9064C5.42863 19.2421 5.74179 19.4434 6.17187 19.6094C6.66619 19.8005 7.19148 19.9061 7.97212 19.9422C9.07618 19.9939 9.46203 20 12.001 20C14.4755 20 14.8788 19.9934 16.0296 19.9422C16.8117 19.9055 17.3385 19.7996 17.827 19.6106C18.2604 19.4423 18.5752 19.2402 18.9074 18.9085C19.2436 18.5718 19.4445 18.2594 19.6107 17.8283C19.8013 17.3358 19.9071 16.8098 19.9432 16.0289C19.9949 14.9248 20.001 14.5389 20.001 12C20.001 9.52552 19.9944 9.12221 19.9432 7.97137C19.9064 7.18906 19.8005 6.66149 19.6113 6.17318C19.4434 5.74038 19.2417 5.42635 18.9084 5.09255C18.573 4.75715 18.2616 4.55693 17.8271 4.38942C17.338 4.19954 16.8124 4.09396 16.0298 4.05781C14.9258 4.00605 14.5399 4 12.001 4ZM12.001 2C14.7176 2 15.0568 2.01 16.1235 2.06C17.1876 2.10917 17.9135 2.2775 18.551 2.525C19.2101 2.77917 19.7668 3.1225 20.3226 3.67833C20.8776 4.23417 21.221 4.7925 21.476 5.45C21.7226 6.08667 21.891 6.81333 21.941 7.8775C21.9885 8.94417 22.001 9.28333 22.001 12C22.001 14.7167 21.991 15.0558 21.941 16.1225C21.8918 17.1867 21.7226 17.9125 21.476 18.55C21.2218 19.2092 20.8776 19.7658 20.3226 20.3217C19.7668 20.8767 19.2076 21.22 18.551 21.475C17.9135 21.7217 17.1876 21.89 16.1235 21.94C15.0568 21.9875 14.7176 22 12.001 22C9.28431 22 8.94514 21.99 7.87848 21.94C6.81431 21.8908 6.08931 21.7217 5.45098 21.475C4.79264 21.2208 4.23514 20.8767 3.67931 20.3217C3.12348 19.7658 2.78098 19.2067 2.52598 18.55C2.27848 17.9125 2.11098 17.1867 2.06098 16.1225C2.01348 15.0558 2.00098 14.7167 2.00098 12C2.00098 9.28333 2.01098 8.94417 2.06098 7.8775C2.11014 6.8125 2.27848 6.0875 2.52598 5.45C2.78014 4.79167 3.12348 4.23417 3.67931 3.67833C4.23514 3.1225 4.79348 2.78 5.45098 2.525C6.08848 2.2775 6.81348 2.11 7.87848 2.06C8.94514 2.0125 9.28431 2 12.001 2Z">
+                        </path>
+
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- কনট্যাক্ট ফর্ম মোডাল কন্টেইনার -->
+    <div id="contact-modal" class="modal-overlay">
+        <div class="contact-card">
+            <!-- ফর্ম বন্ধ করার ক্রস বাটন -->
+            <button class="close-modal-btn" onclick="closeContactForm()">&times;</button>
+
+            <h2>Let's Talk</h2>
+            <p class="form-desc">Whether you're looking to build a new website, improve your existing platform, or bring
+                a unique project to life, I'm here to help.</p>
+
+            <!-- 🎯 action-এ Web3Forms-এর লিঙ্কটি বসানো হয়েছে -->
+            <form id="portfolio-form" action="https://web3forms.com/" method="POST" onsubmit="handleFormSubmit(event)">
+
+
+                <!-- ⚠️ এখানে YOUR_ACCESS_KEY_HERE কেটে আপনার ইমেইলে আসা আসল কি-টি বসিয়ে দিন -->
+                <input type="hidden" name="access_key" value="093152cb-d609-48b3-8e42-381b09cc5220">
+
+                <!-- স্প্যাম বট থেকে বাঁচার জন্য একটি সিক্রেট ইনপুট (ইউজাররা এটি দেখতে পাবে না) -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                <div class="input-group">
+                    <label for="fullname">Full Name</label>
+                    <!-- 🎯 name="name" যুক্ত করা হয়েছে -->
+                    <input type="text" id="fullname" name="name" placeholder="" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <!-- 🎯 name="email" যুক্ত করা হয়েছে -->
+                    <input type="email" id="email" name="email" placeholder="" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="message">Message</label>
+                    <!-- 🎯 name="message" যুক্ত করা হয়েছে -->
+                    <textarea id="message" name="message" rows="5" placeholder="Share your thoughts..."
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="form-send-btn">Send</button>
+
+                <!-- সাকসেস মেসেজ দেখানোর কন্টেইনার -->
+                <div id="form-success-msg" class="success-message"></div>
+            </form>
+
+        </div>
+    </div>
+
+    </form>
+    </div>
+    </div>
+
+    <!-- Typed.js লাইব্রেরি লিঙ্ক -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@4.0.2/dist/typed.umd.js"></script>
+</body>
+<script>
+    const menuOpen = document.getElementById('menuOpen');
+    const menuClose = document.getElementById('menuClose');
+    const navLinks = document.getElementById('navLinks');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    // হ্যামবার্গার ক্লিক করলে মেনু আসবে
+    menuOpen.addEventListener('click', () => {
+        navLinks.classList.add('active');
+    });
+
+    // ক্রস ক্লিক করলে মেনু চলে যাবে
+    menuClose.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+
+    // মেনুর কোনো লিংকে ক্লিক করলেও যেন মেনু স্বয়ংক্রিয়ভাবে বন্ধ হয়ে যায়
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    
+</script>
+
+</html>
